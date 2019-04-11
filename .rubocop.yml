@@ -30,6 +30,7 @@ require: rubocop-performance
 
 AllCops:
   Exclude:
+    - vendor/**/*
     - db/**/*
     - bin/**/*
     - tmp/**/*
