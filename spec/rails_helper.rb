@@ -25,6 +25,7 @@ end
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
+  config.include RequestSpecHelper
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
