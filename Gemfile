@@ -7,7 +7,7 @@ gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'bcrypt', '~> 3.1.7'
-#gem 'graphql', '~> 1.9', '>= 1.9.4'
+gem 'graphql', '~> 1.9', '>= 1.9.4'
 gem 'bootsnap', '>= 1.1.0', require: false
 # gem 'rack-cors'
 
