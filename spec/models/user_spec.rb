@@ -41,6 +41,15 @@ RSpec.describe User, type: :model do
 				user.save
 				expect(user.reload.email).to eq(email.downcase)
 			end
+
+			it 'should not allow to save user with same email with other upcased letters' do
+				email = "UpCaSeD@email.com"
+				other_user = build(:user)
+				other_user.email = email
+				user.email = email.upcase
+				other_user.save
+				expect(user.save).to be_falsy
+			end
 		end
 
 		context 'username validation' do
