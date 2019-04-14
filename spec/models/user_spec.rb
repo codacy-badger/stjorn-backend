@@ -34,6 +34,13 @@ RSpec.describe User, type: :model do
 					expect(user).to be_invalid
 				end
 			end
+
+			it 'should save downcased email' do
+				email = "UpCaSeD@email.com"
+				user.email = email
+				user.save
+				expect(user.reload.email).to eq(email.downcase)
+			end
 		end
 
 		context 'username validation' do
