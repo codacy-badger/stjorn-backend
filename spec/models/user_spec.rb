@@ -20,7 +20,10 @@ RSpec.describe User, type: :model do
 
     context 'email validation' do
       it 'should accept valid adresses' do
-        valid_addresess = %w[email@example.com firstname.lastname@example.com email@subdomain.example.com firstname+lastname@example.com email@123.123.123.123 1234567890@example.com email@example-one.com _______@example.com email@example.name email@example.museum email@example.co.jp firstname-lastname@example.com]
+        valid_addresess = %w[email@example.com firstname.lastname@example.com email@subdomain.example.com
+                             firstname+lastname@example.com email@123.123.123.123 1234567890@example.com
+                             email@example-one.com _______@example.com email@example.name
+                             email@example.museum email@example.co.jp firstname-lastname@example.com]
 
         valid_addresess.each do |adress|
           user.email = adress
@@ -29,7 +32,9 @@ RSpec.describe User, type: :model do
       end
 
       it 'shouldn not accept invalid adresses' do
-        invalid_adressess = ['plainaddress', '#@%^%#$@#$@#.com', '@example.com', 'Joe Smith', '<email@example.com>', 'mail.example.com', 'email@example@example.com', '”(),:;<>[\]@example.com', 'just”not”right@example.com']
+        invalid_adressess = ['plainaddress', '#@%^%#$@#$@#.com', '@example.com', 'Joe Smith',
+                             '<email@example.com>', 'mail.example.com', 'email@example@example.com',
+                             '”(),:;<>[\]@example.com', 'just”not”right@example.com']
 
         invalid_adressess.each do |adress|
           user.email = adress

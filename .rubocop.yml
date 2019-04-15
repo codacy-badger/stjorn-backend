@@ -12,8 +12,6 @@ Style/MixinUsage:
 
 Metrics/LineLength:
   Max: 119
-  Exclude:
-    - spec/**/*
 
 Metrics/BlockLength:
   Exclude:
