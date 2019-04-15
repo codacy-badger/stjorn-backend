@@ -23,6 +23,24 @@ ActiveRecord::Schema.define(version: 2019_04_15_210055) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email"
     t.index ["username"], name: "index_users_on_username"
+    
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "todos", force: :cascade do |t|
+    t.string "items"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "workspaces", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
