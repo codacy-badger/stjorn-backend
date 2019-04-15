@@ -2,27 +2,6 @@
 
 module GraphQL
   module MutationsHelper
-    def create_post_mutation
-      %(
-				mutation CreatePost(
-					$title: String!,
-					$body: String!,
-				) {
-					createPost(input: {
-						title:$title,
-						body:$body,
-					}) {
-						post {
-							id
-							title
-							body
-						}
-						errors
-					}
-				}
-			)
-    end
-
     def create_user_mutation
       %(
 				mutation CreateUser(
@@ -40,23 +19,6 @@ module GraphQL
 							username
 							email
 						}
-						errors,
-					}
-				}
-			)
-    end
-
-    def login_mutation
-      %(
-				mutation Login(
-					$email: String!,
-					$password: String!,
-				) {
-					login(input: {
-						email:$email,
-						password:$password,
-					}) {
-						token,
 						errors,
 					}
 				}
