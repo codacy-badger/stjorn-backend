@@ -2,14 +2,21 @@
 
 module Types
   class QueryType < Types::BaseObject
-    # Add root-level fields here.
-    # They will be entry points for queries on your schema.
+    field :user, UserType, null: false do
+      description 'Finds user by username'
+      argument :username, String, required: true
+    end
 
-    # TODO: remove me
-    field :test_field, String, null: false,
-                               description: 'An example field added by the generator'
-    def test_field
-      'Hello World!'
+    field :all_users, [UserType], null: false do
+      description 'Returns all posts'
+    end
+
+    def user(username:)
+      User.find_by(username: username)
+    end
+
+    def all_users
+      User.all
     end
   end
 end

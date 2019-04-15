@@ -28,6 +28,8 @@ end
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include RequestSpecHelper
+  config.include GraphQL::MutationVariables
+  config.include GraphQL::MutationsHelper
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
