@@ -40,7 +40,6 @@ module GraphQL
 							username
 							email
 						}
-						token,
 						errors,
 					}
 				}
