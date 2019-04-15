@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :workspace do
-    name { SecureRandom.hex(12) }
-    description { SecureRandom.hex(30) }
+    name { Faker::Company.Random.new(30) }
+    description { Faker::String.random(50) }
   end
 end
