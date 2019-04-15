@@ -29,7 +29,7 @@ RSpec.describe User, type: :model do
       end
 
       it 'shouldn not accept invalid adresses' do
-        invalid_adressess = ['plainaddress' '#@%^%#$@#$@#.com' '@example.com' 'Joe Smith' '<email@example.com>' 'mail.example.com' 'email@example@example.com' '”(),:;<>[\]@example.com' 'just”not”right@example.com']
+        invalid_adressess = ['plainaddress', '#@%^%#$@#$@#.com', '@example.com', 'Joe Smith', '<email@example.com>', 'mail.example.com', 'email@example@example.com', '”(),:;<>[\]@example.com', 'just”not”right@example.com']
 
         invalid_adressess.each do |adress|
           user.email = adress
