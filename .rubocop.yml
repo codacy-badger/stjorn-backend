@@ -1,5 +1,7 @@
 Metrics/MethodLength:
   Max: 14
+  Exclude:
+    - spec/support/graphql/*
 
 Naming/UncommunicativeMethodParamName:
   Exclude:
