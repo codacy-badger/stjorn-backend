@@ -2,7 +2,7 @@
 
 # container for project items
 class Workspace < ApplicationRecord
-  belongs_to :project
+  has_many :project
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 30 }
   validates :description, presence: true, length: { maximum: 200 }
