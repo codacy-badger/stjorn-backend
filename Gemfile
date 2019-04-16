@@ -31,6 +31,8 @@ group :test do
   gem 'factory_bot_rails', '~> 5.0', '>= 5.0.1'
   gem 'faker', '~> 1.9', '>= 1.9.3'
   gem 'shoulda-matchers', '~> 4.0', '>= 4.0.1'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
