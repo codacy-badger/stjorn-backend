@@ -16,6 +16,7 @@ jobs:
           POSTGRES_USER: stjorn
           POSTGRES_DB: stjorn-test
           POSTGRES_PASSWORD: ""
+          CC_TEST_REPORTER_ID: 61cf0190628d32cb4c09bf1a9e07f6cf8e8df6780784a06e4fb6e3d58052a7f4
     steps:
       - checkout
 
@@ -40,6 +41,13 @@ jobs:
       - run:
           name: Database setup
           command: bin/rails db:schema:load --trace
+
+      - run:
+          name: Setup CodeClimate test reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+            ./cc-test-reporter before-build
 
       - run:
           name: Run Rubocop checks
