@@ -1,3 +1,13 @@
+require: rubocop-performance
+
+Layout/AlignArray:
+  Exclude:
+    - spec/spec_helper.rb
+
+Layout/IndentArray:
+  Exclude:
+    - spec/spec_helper.rb
+
 Metrics/MethodLength:
   Max: 14
   Exclude:
@@ -18,8 +28,6 @@ Metrics/LineLength:
 Metrics/BlockLength:
   Exclude:
     - spec/**/*
-
-require: rubocop-performance
 
 Documentation:
   Enabled: false
